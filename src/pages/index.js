@@ -2,9 +2,8 @@ import React from 'react';
 
 import Layout from '../components/Layout';
 import Footer from '../components/Footer';
-import Header from '../components/Header';
-import EmailForm from '../components/EmailForm';
 import SlideShow from '../components/SlideShow';
+
 
 var settings = {
   images: [
@@ -18,8 +17,6 @@ var settings = {
 
 const IndexPage = () => (
   <Layout>
-    <Header />
-    <EmailForm />
     <Footer />
     <SlideShow settings={settings} />
   </Layout>

@@ -9,7 +9,7 @@ export default function Footer() {
           const { icon, name, url } = social;
           return (
             <li>
-              <a href={url} class={`icon ${icon}`}>
+              <a href={url} class={`icon ${icon}`} target="_blank" rel="noreferrer">
                 <span class="label">{name}</span>
               </a>
             </li>
@@ -17,11 +17,7 @@ export default function Footer() {
         })}
       </ul>
       <ul className="copyright">
-        <li>&copy; Eventually.</li>
-        <li>
-          Credits: <a href="http://unsplash.com/">Unsplash</a> +
-          <a href="http://html5up.net">HTML5 UP</a>
-        </li>
+        <li>&copy; Freshco</li>
       </ul>
     </footer>
   );

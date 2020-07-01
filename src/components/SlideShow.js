@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import FreshcoBackground from '../assets/images/background.jpg'
 
 export default class SlideShow extends PureComponent {
   constructor() {
@@ -7,32 +8,10 @@ export default class SlideShow extends PureComponent {
       pos: 0,
       lastPos: 0,
     };
-    this.rotateSlide = this.rotateSlide.bind(this);
+
   }
 
-  rotateSlide() {
-    const { settings } = this.props;
-    setInterval(() => {
-      let { pos, lastPos } = this.state;
-      lastPos = pos;
-      pos++;
 
-      if (pos >= settings.images.length) {
-        pos = 0;
-      }
-
-      // Hide last image after a short delay.
-      setTimeout(() => {
-        lastPos = pos;
-        this.setState({ lastPos });
-      }, settings.delay / 2);
-
-      this.setState({ lastPos, pos });
-    }, settings.delay);
-  }
-  componentDidMount() {
-    this.rotateSlide();
-  }
   render() {
     const { pos, lastPos } = this.state;
     const { settings } = this.props;
@@ -45,7 +24,7 @@ export default class SlideShow extends PureComponent {
               key={image['url']}
               style={{
                 backgroundPosition: image['position'],
-                backgroundImage: `url("${image['url']}")`,
+                backgroundImage: `url(${FreshcoBackground})`,
               }}
               className={
                 i === pos ? 'visible top' : i === lastPos ? 'visible' : ''
